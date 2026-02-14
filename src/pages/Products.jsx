@@ -1,65 +1,87 @@
-import { Smartphone, Layout, Zap, ArrowRight } from 'lucide-react';
+import { Smartphone, Layout, Zap, ArrowRight, Star } from 'lucide-react';
 
 const Products = () => {
     const products = [
         {
             title: "TaskMaster AI",
             category: "Productivity",
-            description: "An intelligent task management app that organizes your day automatically.",
+            description: "An intelligent task management app that partially automates your daily workflow using predictive algorithms.",
             status: "In Development",
-            icon: <Layout size={32} color="white" />
+            icon: <Layout size={32} color="white" />,
+            rating: "4.8"
         },
         {
             title: "HealthSync",
             category: "Health & Fitness",
-            description: "AI-driven health monitoring and personalized wellness plans.",
+            description: "AI-driven health monitoring that integrates with wearable devices to provide personalized wellness plans.",
             status: "Coming Soon",
-            icon: <Zap size={32} color="white" />
+            icon: <Zap size={32} color="white" />,
+            rating: "4.9"
         },
         {
             title: "EduLearn",
             category: "Education",
-            description: "Adaptive learning platform for students of all ages.",
+            description: "Adaptive learning platform that personalizes curriculum based on student performance and learning style.",
             status: "Concept",
-            icon: <Smartphone size={32} color="white" />
+            icon: <Smartphone size={32} color="white" />,
+            rating: "4.7"
         }
     ];
 
     return (
         <>
-            <div className="container section text-center">
-                <h1 style={{ fontSize: '3rem', marginBottom: 'var(--spacing-md)' }}>Our Products</h1>
-                <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-                    Discover our suite of innovative applications designed to enhance your digital life.
-                </p>
+            <div className="section hero-bg" style={{ textAlign: 'center', padding: '80px 0' }}>
+                <div className="container">
+                    <span style={{ color: 'var(--accent-blue)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.9rem', marginBottom: '16px', display: 'block' }}>Innovation</span>
+                    <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, marginBottom: '20px' }}>
+                        Our <span className="gradient-text">Products</span>
+                    </h1>
+                    <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
+                        Discover our suite of innovative applications designed to simplify complexity and enhance your digital life.
+                    </p>
+                </div>
             </div>
 
             <div className="container section" style={{ paddingTop: 0 }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-xl)' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px' }}>
                     {products.map((product, index) => (
-                        <div key={index} style={{
-                            background: 'white',
+                        <div key={index} className="glass-card" style={{
                             borderRadius: '24px',
                             overflow: 'hidden',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-                            border: '1px solid var(--border-color)',
                             transition: 'transform 0.3s ease',
-                        }}>
-                            <div style={{ padding: 'var(--spacing-xl)', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200px' }}>
-                                <div style={{ width: '80px', height: '80px', background: 'var(--accent-blue)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 16px rgba(0,102,204,0.2)' }}>
+                            display: 'flex',
+                            flexDirection: 'column'
+                        }}
+                            onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; }}
+                            onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)'; }}
+                        >
+                            <div style={{ padding: '40px', background: 'linear-gradient(135deg, var(--bg-secondary) 0%, #fff 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '220px', position: 'relative' }}>
+                                <div style={{ width: '80px', height: '80px', background: 'var(--accent-blue)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 20px rgba(0,102,204,0.3)', zIndex: 2 }}>
                                     {product.icon}
                                 </div>
-                            </div>
-                            <div style={{ padding: 'var(--spacing-xl)' }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--spacing-sm)' }}>
-                                    <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '1px' }}>{product.category}</span>
-                                    <span style={{ fontSize: '0.8rem', padding: '4px 8px', background: 'var(--bg-secondary)', borderRadius: '6px', color: 'var(--text-primary)' }}>{product.status}</span>
+                                {/* Decorative Elements */}
+                                <div style={{ position: 'absolute', top: '20px', right: '20px', background: 'rgba(255,255,255,0.5)', padding: '4px 12px', borderRadius: '100px', fontSize: '0.8rem', fontWeight: 600 }}>
+                                    {product.status}
                                 </div>
-                                <h3 style={{ fontSize: '1.5rem', marginBottom: 'var(--spacing-sm)' }}>{product.title}</h3>
-                                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--spacing-lg)' }}>{product.description}</p>
-                                <button style={{ color: 'var(--accent-blue)', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                    Learn More <ArrowRight size={16} />
-                                </button>
+                            </div>
+
+                            <div style={{ padding: '30px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                                    <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent-blue)', textTransform: 'uppercase', letterSpacing: '1px' }}>{product.category}</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.9rem', fontWeight: 600 }}>
+                                        <Star size={14} fill="#FFD700" stroke="#FFD700" /> {product.rating}
+                                    </div>
+                                </div>
+                                <h3 style={{ fontSize: '1.75rem', marginBottom: '12px' }}>{product.title}</h3>
+                                <p style={{ color: 'var(--text-secondary)', marginBottom: '24px', flex: 1, lineHeight: 1.6 }}>{product.description}</p>
+                                <div style={{ marginTop: 'auto' }}>
+                                    <button style={{ color: 'var(--text-primary)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', padding: '0', transition: 'gap 0.2s ease' }}
+                                        onMouseOver={(e) => e.target.style.gap = '12px'}
+                                        onMouseOut={(e) => e.target.style.gap = '8px'}
+                                    >
+                                        Learn More <ArrowRight size={18} />
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     ))}
