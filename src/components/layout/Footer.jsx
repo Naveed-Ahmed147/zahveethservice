@@ -13,7 +13,7 @@ const Footer = () => {
                     <div className="footer-section">
                         <h4>Contact</h4>
                         <p>Email: <a href="mailto:contact@zahveethservice.online">contact@zahveethservice.online</a></p>
-                        <p>Location: Silicon City, CA</p>
+                        <p>Location: Lexington, Kentucky, USA</p>
                     </div>
                     <p className="footer-text">
                         &copy; {currentYear} Zahveeth Service LLC. All rights reserved.

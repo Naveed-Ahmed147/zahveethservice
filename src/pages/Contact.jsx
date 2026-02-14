@@ -33,7 +33,7 @@ const Contact = () => {
                             <ContactInfoItem
                                 icon={<MapPin size={24} />}
                                 title="Visit Us"
-                                content="123 Tech Avenue, Silicon City, CA 94000"
+                                content="401 W Main St, Lexington, Kentucky 40507-1640, United States"
                             />
                         </div>
                     </div>

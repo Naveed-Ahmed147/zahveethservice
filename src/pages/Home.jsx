@@ -1,20 +1,30 @@
 import { ArrowRight, Cpu, Globe, Smartphone, ShieldCheck, Zap, Layers, BarChart, Code, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import heroBg from '../assets/hero-bg.jpg';
+import innovationImg from '../assets/innovation.jpg';
 
 const Home = () => {
     return (
         <>
             {/* Hero Section */}
-            <section className="section hero-bg grid-bg" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
+            <section className="section hero-bg" style={{
+                minHeight: '90vh',
+                display: 'flex',
+                alignItems: 'center',
+                backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.7)), url(${heroBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed'
+            }}>
                 <div className="container text-center">
-                    <div className="animate-float" style={{ marginBottom: 'var(--spacing-md)', display: 'inline-block', padding: '8px 16px', background: 'rgba(0, 102, 204, 0.1)', borderRadius: '20px', color: 'var(--accent-blue)', fontWeight: 600, fontSize: '0.9rem' }}>
+                    <div className="animate-float" style={{ marginBottom: 'var(--spacing-md)', display: 'inline-block', padding: '8px 16px', background: 'rgba(0, 102, 204, 0.1)', borderRadius: '20px', color: 'var(--accent-blue)', fontWeight: 600, fontSize: '0.9rem', backdropFilter: 'blur(5px)' }}>
                         Next-Gen Technology Solutions
                     </div>
                     <h1 style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800, letterSpacing: '-2px', marginBottom: 'var(--spacing-md)', lineHeight: 1.1 }}>
                         Innovating for a <br />
                         <span className="gradient-text">Smarter Future</span>
                     </h1>
-                    <p style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto var(--spacing-xl)', lineHeight: 1.6 }}>
+                    <p style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto var(--spacing-xl)', lineHeight: 1.6, fontWeight: 500 }}>
                         Zahveeth Service LLC empowers businesses with cutting-edge AI, mobile, and web technologies. We turn complex challenges into elegant, intelligent solutions.
                     </p>
                     <div style={{ display: 'flex', gap: 'var(--spacing-md)', justifyContent: 'center' }}>
@@ -36,22 +46,23 @@ const Home = () => {
                             Start Your Project <ArrowRight size={20} />
                         </Link>
                         <Link to="/services" style={{
-                            background: 'white',
+                            background: 'rgba(255,255,255,0.8)',
                             color: 'var(--text-primary)',
                             padding: '16px 32px',
                             borderRadius: '980px',
                             fontWeight: 600,
                             border: '1px solid var(--border-color)',
-                            transition: 'background 0.2s ease'
+                            transition: 'background 0.2s ease',
+                            backdropFilter: 'blur(5px)'
                         }}
-                            onMouseOver={(e) => e.target.style.background = 'var(--bg-secondary)'}
-                            onMouseOut={(e) => e.target.style.background = 'white'}
+                            onMouseOver={(e) => e.target.style.background = 'white'}
+                            onMouseOut={(e) => e.target.style.background = 'rgba(255,255,255,0.8)'}
                         >
                             Explore Services
                         </Link>
                     </div>
 
-                    <div style={{ marginTop: 'var(--spacing-xxl)', display: 'flex', justifyContent: 'center', gap: 'var(--spacing-xl)' }}>
+                    <div style={{ marginTop: 'var(--spacing-xxl)', display: 'flex', justifyContent: 'center', gap: 'var(--spacing-xl)', flexWrap: 'wrap' }}>
                         <div className="glass-card" style={{ padding: '20px', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '150px' }}>
                             <span style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--text-primary)' }}>98%</span>
                             <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Client Satisfaction</span>
@@ -114,7 +125,7 @@ const Home = () => {
             {/* Services Highlight */}
             <section className="section" style={{ background: 'var(--text-primary)', color: 'white' }}>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-xxl)', alignItems: 'center' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 'var(--spacing-xxl)', alignItems: 'center' }}>
                         <div>
                             <h2 style={{ fontSize: '3rem', marginBottom: 'var(--spacing-md)' }}>End-to-End <br /><span style={{ color: 'var(--accent-blue)' }}>Development</span></h2>
                             <p style={{ fontSize: '1.2rem', color: '#86868b', marginBottom: 'var(--spacing-lg)', lineHeight: 1.6 }}>
@@ -139,32 +150,21 @@ const Home = () => {
                             </Link>
                         </div>
                         <div style={{ position: 'relative' }}>
-                            {/* CSS Abstract Art replacement for image */}
                             <div style={{
                                 width: '100%',
-                                paddingBottom: '100%',
-                                background: 'linear-gradient(45deg, #1a1a1a, #000)',
+                                paddingBottom: '75%',
+                                backgroundImage: `url(${innovationImg})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
                                 borderRadius: '30px',
                                 position: 'relative',
                                 overflow: 'hidden',
+                                boxShadow: '0 20px 50px rgba(0,0,0,0.3)',
                                 border: '1px solid rgba(255,255,255,0.1)'
                             }}>
-                                <div style={{ position: 'absolute', top: '20%', left: '20%', width: '40%', height: '40%', background: 'var(--accent-blue)', filter: 'blur(80px)', opacity: 0.5, borderRadius: '50%' }}></div>
-                                <div style={{ position: 'absolute', bottom: '10%', right: '10%', width: '100px', height: '100px', background: 'purple', filter: 'blur(60px)', opacity: 0.4, borderRadius: '50%' }}></div>
-
-                                {/* Simulated Code Interface */}
-                                <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '80%', height: '60%', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', padding: '20px' }}>
-                                    <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
-                                        <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56' }}></div>
-                                        <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }}></div>
-                                        <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27c93f' }}></div>
-                                    </div>
-                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                                        <div style={{ width: '60%', height: '8px', background: 'rgba(255,255,255,0.2)', borderRadius: '4px' }}></div>
-                                        <div style={{ width: '80%', height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px' }}></div>
-                                        <div style={{ width: '70%', height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px' }}></div>
-                                        <div style={{ width: '50%', height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginTop: '10px' }}></div>
-                                    </div>
+                                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)' }}></div>
+                                <div style={{ position: 'absolute', bottom: '30px', left: '30px' }}>
+                                    <span style={{ background: 'var(--accent-blue)', color: 'white', padding: '6px 12px', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 600 }}>AI Powered</span>
                                 </div>
                             </div>
                         </div>
