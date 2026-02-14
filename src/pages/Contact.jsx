@@ -27,18 +27,13 @@ const Contact = () => {
                             <ContactInfoItem
                                 icon={<Mail size={24} />}
                                 title="Email Us"
-                                content="contact@zahveethservice.com"
-                                link="mailto:contact@zahveethservice.com"
+                                content="contact@zahveethservice.online"
+                                link="mailto:contact@zahveethservice.online"
                             />
                             <ContactInfoItem
                                 icon={<MapPin size={24} />}
                                 title="Visit Us"
                                 content="123 Tech Avenue, Silicon City, CA 94000"
-                            />
-                            <ContactInfoItem
-                                icon={<Phone size={24} />}
-                                title="Call Us"
-                                content="+1 (555) 123-4567"
                             />
                         </div>
                     </div>

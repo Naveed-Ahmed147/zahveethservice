@@ -8,9 +8,7 @@ const Privacy = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
                     <section>
                         <h2 style={{ fontSize: '1.5rem', marginBottom: 'var(--spacing-sm)' }}>1. Introduction</h2>
-                        <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                            Zahveeth Service LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share information about you when you use our website and services.
-                        </p>
+                        <p>Your privacy is important to us. It is Zahveeth Service LLC's policy to respect your privacy regarding any information we may collect from you across our website, <a href="https://zahveethservice.online">https://zahveethservice.online</a>, and other sites we own and operate.</p>
                     </section>
 
                     <section>
@@ -30,7 +28,7 @@ const Privacy = () => {
                     <section>
                         <h2 style={{ fontSize: '1.5rem', marginBottom: 'var(--spacing-sm)' }}>4. Contact Us</h2>
                         <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                            If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:contact@zahveethservice.com" style={{ color: 'var(--accent-blue)' }}>contact@zahveethservice.com</a>
+                            If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:contact@zahveethservice.online" style={{ color: 'var(--accent-blue)' }}>contact@zahveethservice.online</a>
                         </p>
                     </section>
                 </div>

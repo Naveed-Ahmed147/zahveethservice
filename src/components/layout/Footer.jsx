@@ -10,6 +10,11 @@ const Footer = () => {
                     <p className="footer-text" style={{ fontWeight: 500, color: 'var(--text-primary)' }}>
                         Zahveeth Service LLC
                     </p>
+                    <div className="footer-section">
+                        <h4>Contact</h4>
+                        <p>Email: <a href="mailto:contact@zahveethservice.online">contact@zahveethservice.online</a></p>
+                        <p>Location: Silicon City, CA</p>
+                    </div>
                     <p className="footer-text">
                         &copy; {currentYear} Zahveeth Service LLC. All rights reserved.
                     </p>
